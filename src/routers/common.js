@@ -15,6 +15,5 @@ router.post('/send-contact-mail',async(req,res)=>{
     }else{
         response.error('Your message sent successfully',res) 
     }
-    
 });
 module.exports=router;
