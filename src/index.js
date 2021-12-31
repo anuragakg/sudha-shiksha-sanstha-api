@@ -7,6 +7,7 @@ app.get('/',(req,res)=>{
     res.send('port : '+port + 'MAIL_HOST : '+MAIL_HOST )
 });
 const port=process.env.PORT;
+
 app.listen(port,()=>{
     console.log('server running on port: '+port)
 });
