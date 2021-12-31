@@ -9,18 +9,19 @@ let transport = nodemailer.createTransport({
 });
 const sendEMail =(to,subject,emailMessage)=> {
     const message={
-        from: 'elonmusk@tesla.com', // Sender address
+        from: 'anuragkrgupta14@gmail.com', // Sender address
         to: 'anuragkrgupta14@gmail.com',         // List of recipients
         subject: subject, // Subject line
         html: emailMessage
-    }    
+    }  
+    let success=true;  
     transport.sendMail(message, function(err, info) {
         if (err) {
-          //console.log(err)
-        } else {
-          //console.log(info);
-        }
+            //throw new Error('Something wrong');
+            success=false;
+        } 
     });
+    return success;
 };
 
 module.exports={
