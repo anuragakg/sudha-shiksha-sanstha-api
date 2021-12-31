@@ -1,5 +1,8 @@
 const express=require('express');
 const app=express();
+var cors = require('cors')
+app.use(cors())
+
 const commonRouter=require('./routers/common');
 app.use(express.json());
 app.get('/',(req,res)=>{
