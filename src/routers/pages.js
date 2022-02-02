@@ -24,7 +24,7 @@ router.post('/addCategory',[auth],async(req,res)=>{
         res.status(400).send(error.message)
     }
 });
-router.get('/categories',[auth],async(req,res)=>{
+router.get('/categories',async(req,res)=>{
     const category=await Category.find().populate('page_ids','title alias').select("title alias status page_ids");
     
     res.status(200).send(category);
@@ -46,11 +46,11 @@ router.post('/add-page',[auth],async(req,res)=>{
         res.status(400).send(error.message)
     }
 });
-router.get('/get-pages',[auth],async(req,res)=>{
+router.get('/get-pages',async(req,res)=>{
     const page=await Page.find();
     res.status(200).send(page);
 });
-router.get('/get-page-data',[auth],async(req,res)=>{
+router.get('/get-page-data',async(req,res)=>{
     const alias=req.query.alias;
     const page=await Page.findOne({alias:alias});
     res.status(200).send(page);
