@@ -17,6 +17,7 @@ app.get('/',(req,res)=>{
     const MONGODB_URL=process.env.MONGODB_URL;
     res.send('port : '+port + ' MAIL_HOST : '+MAIL_HOST + ' MONGODB_URL:' +MONGODB_URL)
 });
+
 app.use('/common',commonRouter);
 app.use('/users',usersRouter);
 app.use('/page',pagesRouter);
